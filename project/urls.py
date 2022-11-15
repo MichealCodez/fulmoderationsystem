@@ -18,13 +18,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from lecturer.views import ResponseView
+from django.contrib.auth.decorators import login_required
+from account.dec import secret_required
 
 urlpatterns = [
     path('school/', admin.site.urls),
     path('submit/', include('lecturer.urls')),
     path('', include('main.urls'), name='main'),
     path('respond/', include('moderator.urls')),
-    path('result/', ResponseView.as_view(), name='response'),
+    path('result/', secret_required(login_required(ResponseView.as_view())), name='response'),
     path('accounts/', include('account.urls'), name='accounts')
 ]
 

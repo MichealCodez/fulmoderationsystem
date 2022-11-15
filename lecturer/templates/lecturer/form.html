@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'lecturer/images/favicon.ico' %}" />
+    <title>Submit Document</title>
     <style>
         body {
             background-color: #f2f2f2;
@@ -83,10 +84,10 @@
         <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
           <div class="row">
             <div class="col-25">
-                <label for="course">Course</label>
+                <label for="course">File Type</label>
             </div>
             <div class="col-75">
-                <input type="text" id="course" name="course" placeholder="Code, Title" required>
+                <input type="text" id="course" name="course" placeholder="Result/Examination" required>
             </div>
           </div>
           <div class="row">
@@ -110,7 +111,7 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label for="lecturer">Lecturer</label>
+                    <label for="lecturer">Examiner</label>
                 </div>
                 <div class="col-75">
                     <input type="text" id="lecturer" name="lecturer" required>
