@@ -76,8 +76,11 @@
             <nav>
                 <div class="topnav">
                   <a class="active" href="/">Home</a>
+                  {% if 'Examiner' in group %}
                   <a href="/submit/">Examiner</a>
+                  {% elif 'Moderator' in group %}
                   <a href="/respond/">Moderator</a>
+                  {% endif %}
                   <a href="/result/">Responses</a>
                   <a id="logout" href="/logout/">Logout</a>
                 </div>

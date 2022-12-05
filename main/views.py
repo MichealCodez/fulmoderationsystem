@@ -9,6 +9,11 @@ class MainView(generic.ListView):
     context_object_name = 'files'
     paginate_by = 15
     ordering = ['-id']
+    def get_context_data(self,*args, **kwargs):
+        context = super(MainView, self).get_context_data(*args,**kwargs)
+        user_groups = self.request.user.groups.values_list('name',flat = True)
+        context['group'] = list(user_groups) # self.request.user.groups.all()
+        return context
 
 
 class WrongView(generic.ListView):

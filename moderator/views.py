@@ -21,6 +21,6 @@ def response(request):
                      moderator=moderator, status=status, message=message)
         b.save()
         messages.success(request, 'Response Submitted Successfully!')
-        return redirect('/')
+        return redirect('/result/')
     else:
         return render(request, 'moderator/moderator.html')

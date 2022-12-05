@@ -63,6 +63,9 @@
     </style>
 </head>
 <body>
+    {% for message in messages %}
+    <ul style="background-color: lightgreen; color: white; font: message-box">{{ message }}</ul>
+    {% endfor %}
     <div class="container">
         <div>
             <nav>
